@@ -1,3 +1,4 @@
+A list of those users who bought any animal feed for the period August 1-15, except "Kitekat cat food, with rabbit in sauce, 85 g":
 SELECT DISTINCT o.user_id
 FROM orders o
 JOIN order_lines ol ON o.order_id = ol.order_id
@@ -7,7 +8,7 @@ WHERE p.category = 'Продукция для животных'
   AND o.order_date BETWEEN '2023-08-01' AND '2023-08-15';
 
 
-
+A list of the top 5 most common products in user orders in St. Petersburg for the period August 15-30: 
 SELECT p.product, COUNT(ol.product_id) AS order_count
 FROM orders o
 JOIN order_lines ol ON o.order_id = ol.order_id
